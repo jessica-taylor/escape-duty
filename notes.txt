@@ -1,0 +1,22 @@
+todos:
+- save thing
+- make it look nicer
+- 20 mins by default
+
+
+go to page
+  specific thing? (default, main page)
+    write down what you're doing
+    optionally check box for "keep me on this page"
+    probability thing?
+    go to the page
+    20 mins later (and go to new page!), or go to different page and checked box
+      go to prompt
+    20 mins later (and didn't go to new page), then popup (yes/no is this still doing the thing?)
+      if popup stays up for a minute, go to prompt
+  bleh
+    cute animal
+    write down how you are feeling
+    whether you feel stuck on something
+    2 buttons: back (or close tab?) and go to page
+    1 hour later, popup "do you want to tell me how you're feeling"
