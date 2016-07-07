@@ -2,30 +2,30 @@
 
 (function() {
 
-  // Any URL with this as a substring will get blocked.
-  var blockedSites = ['www.reddit.com', 'www.facebook.com'];
+  // Any URL with this as a substring will get gated.
+  var gatedSites = ['www.reddit.com', 'www.facebook.com'];
 
   var windowMins = 20.0;
 
   var windowMs = 1000 * 60 * windowMins;
 
-  /* Check whether the page is blocked and act appropriately
+  /* Check whether the page is gated and act appropriately
    * callType is 'initial' for the first call when the page is loaded, or
    * 'periodic' for periodic timed calls.
    */
-  function checkForBlocked(callType) {
+  function checkForGated(callType) {
 
     var currentPage = window.location.href;
 
-    var isBlocked = false;
-    for (var i = 0; i < blockedSites.length; ++i) {
-      if (currentPage.indexOf(blockedSites[i]) != -1) {
-        isBlocked = true;
+    var isGated = false;
+    for (var i = 0; i < gatedSites.length; ++i) {
+      if (currentPage.indexOf(gatedSites[i]) != -1) {
+        isGated = true;
         break;
       }
     }
 
-    if (isBlocked) {
+    if (isGated) {
 
       var currentTimeMs = new Date().getTime();
 
@@ -58,8 +58,8 @@
     }
   }
 
-  checkForBlocked('initial');
-  setInterval(function() { checkForBlocked('periodic'); }, 10 * 1000);
+  checkForGated('initial');
+  setInterval(function() { checkForGated('periodic'); }, 10 * 1000);
 
 })()
 
