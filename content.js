@@ -46,7 +46,6 @@
         var lastPage = lastRecord.targetPage || null;
         var lastIsJustPage = lastRecord.lastIsJustPage || false;
         var timeUp = currentTimeMs - lastTimeMs > windowMs;
-        console.log('callType', callType, 'timeUp', timeUp);
         if ((callType == 'initial' && timeUp) || (lastIsJustPage && lastPage != currentPage)) {
           // Redirect to the prompt page.
           var promptURL = chrome.extension.getURL('prompt.html');

@@ -29,7 +29,6 @@ $(function() {
       }
       return null;
     }
-    console.log('promptText', promptText);
     var record = {
       visitType: visitType,
       targetPage: targetPage,
@@ -50,11 +49,8 @@ $(function() {
   // Try to add the record and maybe visit the page.
   function submit(isVisitingPage) {
     var record = compileRecord(isVisitingPage);
-    console.log('isVisitingPage', isVisitingPage);
-    console.log('record', record);
     if (record) {
       chrome.runtime.sendMessage({addRecord: {newRecord: record}}, function() {
-        console.log('added record');
         if (isVisitingPage) {
           window.location = targetPage;
         }
@@ -98,7 +94,6 @@ $(function() {
 
   // Converts a record to a DOM element (displayed at the bottom of the page).
   function recordToElement(record) {
-    console.log('record', record);
     var container = $('<li>');
     container.addClass('list-group-item');
     var description = '';
